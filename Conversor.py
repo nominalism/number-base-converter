@@ -1,32 +1,32 @@
 from re import A
 
 
-def converteParaOctal(n):
-    numeroOctal = ""
+def convertToOctal(n):
+    octalNumber = ""
     while n > 0:
         d = n % 8
         digit = str(d)
-        numeroOctal = digit + numeroOctal
+        octalNumber = digit + octalNumber
         n = int(float(n) / 8)
-    if len(numeroOctal) == 0:
-        numeroOctal = "0"
+    if len(octalNumber) == 0:
+        octalNumber = "0"
     
-    return numeroOctal
+    return octalNumber
 
-def converteparabinario(n):
-    numerobin = ""
+def convertToBinary(n):
+    binaryNumber = ""
     while n > 0:
         d = n % 2
         digit = str(d)
-        numerobin = digit + numerobin
+        binaryNumber = digit + binaryNumber
         n = int(float(n) / 2)
-    if len(numerobin) == 0:
-        numerobin = "0"
+    if len(binaryNumber) == 0:
+        binaryNumber = "0"
     
-    return numerobin
+    return binaryNumber
 
 def hexadecimal(n):
-    numeroexa = ""
+    hexNumber = ""
     while n > 0:
         d = n % 16
         digit = str(d)
@@ -44,28 +44,28 @@ def hexadecimal(n):
                 digit = 'E'
             if d == 15:
                 digit = 'F' 
-        numeroexa = digit + numeroexa
+        hexNumber = digit + hexNumber
         n = int(float(n) / 16)
-    if len(numeroexa) == 0:
-        numeroexa = "0"
+    if len(hexNumber) == 0:
+        hexNumber = "0"
     
-    return numeroexa
+    return hexNumber
     
 
 
-n = int(input(" Número a ser convertido: "))
-print("Opções de conversão: (1) para Octal; (2) para Binário; (3) para Hexadecimal.")
-opcao = int(input())
-if opcao == 1:
-    result = converteParaOctal(n)
+n = int(input("Number to be converted: "))
+print("Conversion options: (1) to Octal; (2) to Binary; (3) to Hexadecimal.")
+option = int(input())
+if option == 1:
+    result = convertToOctal(n)
     print(result)
 else:
-    if opcao == 2:
-        result = converteparabinario(n)
+    if option == 2:
+        result = convertToBinary(n)
         print(result)
     else:
-        if opcao == 3:
+        if option == 3:
             result = hexadecimal(n)
             print(result)
         else:
-             print("Opção inválida!")
+            print("Invalid option!")
